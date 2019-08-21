@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:background="@drawable/rect_shadow"
+    android:elevation="2dp"
+    android:padding="8dp">
+
+
+    <TextView
+        android:id="@+id/text_hotel_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Название"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image_hotel_item_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_home_black_18"
+        app:layout_constraintBottom_toBottomOf="@id/text_hotel_item_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_hotel_item_address" />
+
+    <TextView
+        android:id="@+id/text_hotel_item_address"
+        style="@style/TextHotelCard"
+        android:text="Адрес"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/image_hotel_item_address"
+        app:layout_constraintTop_toBottomOf="@id/text_hotel_item_name" />
+
+    <ImageView
+        android:id="@+id/image_hotel_item_stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_star_rate_black_18"
+        app:layout_constraintBottom_toBottomOf="@id/text_hotel_item_stars"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_hotel_item_stars" />
+
+    <TextView
+        android:id="@+id/text_hotel_item_stars"
+        style="@style/TextHotelCard"
+        android:text="Рейтинг"
+        app:layout_constraintStart_toEndOf="@id/image_hotel_item_stars"
+        app:layout_constraintTop_toBottomOf="@id/text_hotel_item_address" />
+
+    <ImageView
+        android:id="@+id/image_hotel_item_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_directions_black_18"
+        app:layout_constraintBottom_toBottomOf="@id/text_hotel_item_distance"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_hotel_item_distance" />
+
+    <TextView
+        android:id="@+id/text_hotel_item_distance"
+        style="@style/TextHotelCard"
+        android:text="Расстояние"
+        app:layout_constraintStart_toEndOf="@id/image_hotel_item_distance"
+        app:layout_constraintTop_toBottomOf="@id/text_hotel_item_stars" />
+
+    <ImageView
+        android:id="@+id/image_hotel_item_suites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_vpn_key_black_18"
+        app:layout_constraintBottom_toBottomOf="@id/text_hotel_item_suites"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_hotel_item_suites" />
+
+    <TextView
+        android:id="@+id/text_hotel_item_suites"
+        style="@style/TextHotelCard"
+        android:text="Номера"
+        app:layout_constraintStart_toEndOf="@id/image_hotel_item_suites"
+        app:layout_constraintTop_toBottomOf="@id/text_hotel_item_distance" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Hotel Explorer</string>
+    <string name="hotel_id">hotel_id</string>
+    <string-array name="sorting_array">
+        <item>По умолчанию</item>
+        <item>По расстоянию</item>
+        <item>По количеству номеров</item>
+    </string-array>
+</resources>

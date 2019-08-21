@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".activities.HotelActivity">
+
+    <ImageView
+        android:id="@+id/image_hotel"
+        android:layout_width="match_parent"
+        android:layout_height="312dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:elevation="8dp"
+        tools:src="@tools:sample/backgrounds/scenic[9]" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/outline_arrow_back_white_36" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/text_hotel_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Название отеля"
+        android:textColor="#fff"
+        android:layout_marginStart="8dp"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@id/image_hotel"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layout_hotel_address"
+        style="@style/TextHotelInfoBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_hotel">
+
+        <ImageView
+            style="@style/ImageHotelInfo"
+            android:src="@drawable/baseline_home_black_24" />
+
+        <TextView
+            android:id="@+id/text_hotel_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Адрес" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_hotel_stars"
+        style="@style/TextHotelInfoBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_hotel_address">
+
+        <ImageView
+            style="@style/ImageHotelInfo"
+            android:src="@drawable/baseline_star_rate_black_24" />
+
+        <TextView
+            android:id="@+id/text_hotel_stars"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Рейтинг" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_hotel_distance"
+        style="@style/TextHotelInfoBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_hotel_stars">
+
+        <ImageView
+            style="@style/ImageHotelInfo"
+            android:src="@drawable/baseline_directions_black_24" />
+
+        <TextView
+            android:id="@+id/text_hotel_distance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Расстояние" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_hotel_suites"
+        style="@style/TextHotelInfoBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_hotel_distance">
+
+        <ImageView
+            style="@style/ImageHotelInfo"
+            android:src="@drawable/baseline_vpn_key_black_24" />
+
+        <TextView
+            android:id="@+id/text_hotel_suites"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Свободные номера" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_hotel_lat"
+        style="@style/TextHotelInfoBackground"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_hotel_suites">
+
+        <ImageView
+            style="@style/ImageHotelInfo"
+
+            android:src="@drawable/baseline_place_black_24" />
+
+        <TextView
+            android:id="@+id/text_hotel_coordinates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Местоположение" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="-1dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="42dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
