@@ -12,7 +12,7 @@ import java.net.URL
 
 object Connector {
 
-    const val BASE_URL = "https://raw.githubusercontent.com/iMofas/ios-android-test/master/"
+    private const val BASE_URL = "https://raw.githubusercontent.com/iMofas/ios-android-test/master/"
 
     private val gson = GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
         .create()
@@ -56,12 +56,12 @@ object Connector {
      * Метод загрузки изображения по названию файла
      */
     suspend fun getImage(imageName: String): Bitmap {
-        try {
+        return try {
             val url = URL(BASE_URL + imageName)
-            return BitmapFactory.decodeStream(url.openConnection().getInputStream())
+            BitmapFactory.decodeStream(url.openConnection().getInputStream())
         }catch (e: Exception){
             e.printStackTrace()
-            return Bitmap.createBitmap(100, 100, Bitmap.Config.ALPHA_8)
+            Bitmap.createBitmap(100, 100, Bitmap.Config.ALPHA_8)
         }
     }
 }

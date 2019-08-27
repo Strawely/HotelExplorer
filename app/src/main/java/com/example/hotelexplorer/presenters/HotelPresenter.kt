@@ -1,40 +1,52 @@
 package com.example.hotelexplorer.presenters
 
-import android.graphics.Bitmap
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.OnLifecycleEvent
 import com.example.hotelexplorer.Connector
 import com.example.hotelexplorer.ImageProcessor
-import com.example.hotelexplorer.model.Hotel
+import com.example.hotelexplorer.Repository
 import com.example.hotelexplorer.views.IHotelView
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HotelPresenter(var view: IHotelView, hotelId: Long) {
-    var hotel: Hotel? = null
-        private set
+class HotelPresenter(private var view: IHotelView, private val hotelId: Long): LifecycleObserver {
 
-    init {
-        if (hotelId != -1L) {
-            loadHotel(hotelId)
-        }
-    }
-
-    private fun loadHotel(hotelId: Long) {
+    private fun loadHotel() {
         GlobalScope.launch {
-            hotel = Connector.getSingleHotel(hotelId)
-            if (hotel != null){
+            Repository.currentHotel = Connector.getSingleHotel(hotelId)
+
+            if (Repository.currentHotel != null){
                 withContext(Dispatchers.Main) {
-                    view.fillTextViews(hotel ?: return@withContext)
+                    view.fillTextViews(Repository.currentHotel ?: return@withContext)
                 }
-                val hotelImage = loadHotelImage()
+
+                Repository.currentHotel?.imageBmp = loadHotelImage()
+
                 withContext(Dispatchers.Main){
-                    view.initImage(ImageProcessor.reduceEdge(hotelImage))
+                    view.fillImageView(ImageProcessor.reduceEdge(Repository.currentHotel?.imageBmp))
                 }
             }
             println("Hotel is null")
         }
     }
 
-    private suspend fun loadHotelImage() = Connector.getImage(hotel?.image ?: "")
+    private suspend fun loadHotelImage() = Connector.getImage(Repository.currentHotel?.image ?: "")
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    fun onCreate(){
+        if(Repository.currentHotel == null){
+            loadHotel()
+        } else {
+            view.fillTextViews(Repository.currentHotel ?: return)
+            view.fillImageView(ImageProcessor.reduceEdge(Repository.currentHotel?.imageBmp))
+        }
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+    fun onDestroy(){
+        Repository.currentHotel = null
+    }
 }

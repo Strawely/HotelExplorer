@@ -7,7 +7,7 @@ interface IHotelView {
     /**
      * Метод загрузки изображения во вью
      */
-    fun initImage(bitmap: Bitmap)
+    fun fillImageView(bitmap: Bitmap)
 
     /**
      * Отображение ошибки загрузки отеля

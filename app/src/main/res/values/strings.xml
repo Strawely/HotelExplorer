@@ -1,6 +1,24 @@
 <resources>
     <string name="app_name">Hotel Explorer</string>
     <string name="hotel_id">hotel_id</string>
+    <string name="hotel_list_title">Список отелей</string>
+    <string name="hotel_list_refresh_desc">Кнопка обновления</string>
+    <string name="hotel_list_sorting">Сортировка</string>
+    <string name="hotel_picture_desc">Фото отеля</string>
+    <string name="home_pic_desc">Домик</string>
+    <string name="star_pic_desc">Звезда</string>
+    <string name="direction_pic_desc">Знак направления</string>
+    <string name="key_pic_desc">Ключ</string>
+    <string name="place_pic_desc">Метка</string>
+    <string name="hotel_address_placeholder">Адрес</string>
+    <string name="hotel_stars_placeholder">Рейтинг</string>
+    <string name="hotel_distance_placeholder">Расстояние</string>
+    <string name="hotel_suites_placeholder">Свободные номера</string>
+    <string name="hotel_coordinates_placeholder">Местоположение</string>
+    <string name="arrow_back_desc">Стрелка назад</string>
+    <string name="hotel_name_placeholder">Название отеля</string>
+    <string name="refresh">Обновить</string>
+    <string name="back">Назад</string>
     <string-array name="sorting_array">
         <item>По умолчанию</item>
         <item>По расстоянию</item>

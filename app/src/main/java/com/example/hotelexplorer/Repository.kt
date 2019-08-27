@@ -5,4 +5,5 @@ import com.example.hotelexplorer.model.Hotel
 object Repository {
     var hotelsList: ArrayList<Hotel> = ArrayList()
         private set
+    var currentHotel: Hotel? = null
 }

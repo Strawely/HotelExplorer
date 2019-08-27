@@ -9,9 +9,9 @@
     android:layout_marginBottom="8dp"
     android:background="@drawable/rect_shadow"
     android:clickable="true"
+    android:elevation="2dp"
     android:focusable="true"
-    android:padding="8dp"
-    android:elevation="2dp">
+    android:padding="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,67 +23,65 @@
             android:id="@+id/image_hotel_item_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_home_black_18"
-            app:layout_constraintBottom_toBottomOf="@id/text_hotel_item_address"
+            android:contentDescription="@string/home_pic_desc"
+            android:src="@drawable/baseline_home_black_36"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/text_hotel_item_address"
-            android:contentDescription="@string/home_pic_desc" />
+            app:layout_constraintTop_toTopOf="@+id/text_hotel_item_address" />
 
         <ImageView
             android:id="@+id/image_hotel_item_distance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_directions_black_18"
-            app:layout_constraintBottom_toBottomOf="@id/text_hotel_item_distance"
+            android:contentDescription="@string/direction_pic_desc"
+            android:src="@drawable/baseline_directions_black_36"
+            app:layout_constraintBottom_toBottomOf="@+id/text_hotel_item_distance"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/text_hotel_item_distance"
-            android:contentDescription="@string/direction_pic_desc" />
+            app:layout_constraintTop_toTopOf="@+id/text_hotel_item_distance" />
 
         <ImageView
             android:id="@+id/image_hotel_item_suites"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_vpn_key_black_18"
-            app:layout_constraintBottom_toBottomOf="@id/text_hotel_item_suites"
+            android:contentDescription="@string/key_pic_desc"
+            android:src="@drawable/baseline_vpn_key_black_36"
+            app:layout_constraintBottom_toBottomOf="@+id/text_hotel_item_suites"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/text_hotel_item_suites"
-            android:contentDescription="@string/key_pic_desc" />
+            app:layout_constraintTop_toTopOf="@+id/text_hotel_item_suites" />
+
+        <RatingBar
+            android:id="@+id/rating_hotel_item_stars"
+            style="@style/RatingBar.Large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_hotel_item_name" />
 
         <TextView
             android:id="@+id/text_hotel_item_address"
-            style="@style/HotelCard.Text"
+            style="@style/HotelCard.Text.Large"
             android:text="@string/hotel_address_placeholder"
-            android:textSize="@dimen/defaultTextSize"
             app:layout_constraintStart_toEndOf="@id/image_hotel_item_address"
             app:layout_constraintTop_toBottomOf="@+id/rating_hotel_item_stars" />
 
         <TextView
             android:id="@+id/text_hotel_item_distance"
-            style="@style/HotelCard.Text.Additional"
+            style="@style/HotelCard.Text.Additional.Large"
             android:text="@string/hotel_distance_placeholder"
             app:layout_constraintStart_toEndOf="@id/image_hotel_item_distance"
             app:layout_constraintTop_toBottomOf="@+id/text_hotel_item_address" />
 
         <TextView
             android:id="@+id/text_hotel_item_name"
-            style="@style/HotelCard.Text.Title"
+            style="@style/HotelCard.Text.Title.Large"
             android:text="@string/hotel_name_placeholder"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/text_hotel_item_suites"
-            style="@style/HotelCard.Text.Additional"
+            style="@style/HotelCard.Text.Additional.Large"
             android:text="@string/hotel_suites_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/image_hotel_item_suites"
-            app:layout_constraintTop_toBottomOf="@id/text_hotel_item_distance" />
-
-        <RatingBar
-            android:id="@+id/rating_hotel_item_stars"
-            style="@style/RatingBar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_hotel_item_name" />
+            app:layout_constraintTop_toBottomOf="@+id/text_hotel_item_distance" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </LinearLayout>

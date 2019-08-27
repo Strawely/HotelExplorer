@@ -1,18 +1,25 @@
 package com.example.hotelexplorer
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.junit.Test
 
 class ConnectorTest {
     @Test
     fun testHotelsList(){
-        val hotels = Connector.getHotels()
-        hotels.forEach { println(it) }
+        GlobalScope.launch {
+            val hotels = Connector.getHotels()
+            hotels.forEach { assert(it.id > -1) }
+        }
     }
 
     @Test
     fun testSingleHotel(){
-        val hotel = Connector.getSingleHotel(13370)
-        println(hotel)
-        println(hotel!!.getSuitesAvailable())
+        GlobalScope.launch {
+            val hotel = Connector.getSingleHotel(13370)
+            println(hotel)
+            println(hotel!!.getSuitesAvailable())
+        }
     }
 }

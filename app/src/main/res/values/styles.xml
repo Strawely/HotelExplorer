@@ -1,26 +1,50 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="TextActionBar" parent="android:Widget.TextView">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/colorActionBarText</item>
-    </style>
-
     <style name="TextHotelInfoBackground">
         <item name="android:layout_marginTop">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@android:color/white</item>
     </style>
 
-    <style name="TextHotelCard" parent="android:Widget.TextView">
+    <style name="HotelCard.Text" parent="android:Widget.TextView">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginStart">8dp</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="HotelCard.Text.Large" parent="HotelCard.Text">
+        <item name="android:textSize">@dimen/defaultTextSizeLarge</item>
+    </style>
+
+    <style name="HotelCard.Text.Title" parent="HotelCard.Text">
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginStart">0dp</item>
+        <item name="android:textColor">@color/colorDefaultText</item>
+    </style>
+
+    <style name="HotelCard.Text.Title.Large" parent="HotelCard.Text.Title">
+        <item name="android:textSize">@dimen/defaultTextSizeLarge</item>
+    </style>
+
+    <style name="HotelCard.Text.Additional" parent="HotelCard.Text">
+        <item name="android:textSize">@dimen/smallTextSize</item>
+    </style>
+
+    <style name="HotelCard.Text.Additional.Large" parent="HotelCard.Text.Additional">
+        <item name="android:textSize">@dimen/smallTextSizeLarge</item>
     </style>
 
     <style name="ImageHotelInfo">
@@ -28,6 +52,64 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:layout_marginStart">8dp</item>
+    </style>
+
+    <style name="Toolbar" parent="android:Widget.Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation">32dp</item>
+    </style>
+
+    <style name="Toolbar.LinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:baselineAligned">false</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+    <style name="Toolbar.TextView" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
+        <item name="android:textColor">@color/colorActionBarText</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="Toolbar.TextView.Large" parent="Toolbar.TextView">
+        <item name="android:textSize">@dimen/defaultTextSizeLarge</item>
+    </style>
+
+    <style name="TextViewSorting" parent="android:Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorDefaultText</item>
+        <item name="android:textSize">@dimen/defaultTextSize</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="TextViewSorting.Large" parent="TextViewSorting">
+        <item name="android:textSize">@dimen/defaultTextSizeLarge</item>
+    </style>
+
+    <style name="RatingBar" parent="android:Widget.Holo.RatingBar.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:isIndicator">true</item>
+        <item name="android:progressBackgroundTint">@android:color/white</item>
+        <item name="android:progressTint">@android:color/black</item>
+        <item name="android:stepSize">.5</item>
+    </style>
+
+    <style name="RatingBar.Large" parent="android:Widget.Holo.RatingBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:isIndicator">true</item>
+        <item name="android:progressBackgroundTint">@android:color/white</item>
+        <item name="android:progressTint">@android:color/black</item>
+        <item name="android:stepSize">.5</item>
     </style>
 
 </resources>

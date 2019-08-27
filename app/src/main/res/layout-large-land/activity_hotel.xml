@@ -9,30 +9,33 @@
 
     <ImageView
         android:id="@+id/image_hotel"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/hotel_picture_desc"
-        android:elevation="8dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_photo_height"
+        android:elevation="24dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/backgrounds/scenic[19]" />
+        tools:src="@tools:sample/backgrounds/scenic[19]"
+        android:contentDescription="@string/hotel_picture_desc" />
 
     <LinearLayout
         android:id="@+id/layout_hotel_address"
         style="@style/TextHotelInfoBackground"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_hotel_stars">
 
         <ImageView
             style="@style/ImageHotelInfo"
-            android:contentDescription="@string/home_pic_desc"
-            android:src="@drawable/baseline_home_black_24" />
+            android:src="@drawable/baseline_home_black_48"
+            android:contentDescription="@string/home_pic_desc" />
 
         <TextView
             android:id="@+id/text_hotel_address"
-            style="@style/HotelCard.Text"
+            style="@style/HotelCard.Text.Large"
             android:padding="8dp"
             android:text="@string/hotel_address_placeholder" />
     </LinearLayout>
@@ -40,33 +43,36 @@
     <LinearLayout
         android:id="@+id/layout_hotel_stars"
         style="@style/TextHotelInfoBackground"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_photo_height">
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/image_hotel">
 
         <RatingBar
             android:id="@+id/rating_hotel_stars"
-            style="@style/RatingBar"
+            style="@style/RatingBar.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="8dp"
+            android:layout_marginStart="8dp"
             android:rating="5" />
-
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_hotel_distance"
         style="@style/TextHotelInfoBackground"
+        android:layout_width="0dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_hotel_address">
 
         <ImageView
             style="@style/ImageHotelInfo"
-            android:contentDescription="@string/direction_pic_desc"
-            android:src="@drawable/baseline_directions_black_24" />
+            android:src="@drawable/baseline_directions_black_48"
+            android:contentDescription="@string/direction_pic_desc" />
 
         <TextView
             android:id="@+id/text_hotel_distance"
-            style="@style/HotelCard.Text.Additional"
+            style="@style/HotelCard.Text.Large"
             android:padding="8dp"
             android:text="@string/hotel_distance_placeholder" />
     </LinearLayout>
@@ -74,17 +80,20 @@
     <LinearLayout
         android:id="@+id/layout_hotel_suites"
         style="@style/TextHotelInfoBackground"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/layout_hotel_distance">
+        android:layout_width="0dp"
+        android:layout_marginStart="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline3">
 
         <ImageView
             style="@style/ImageHotelInfo"
-            android:contentDescription="@string/key_pic_desc"
-            android:src="@drawable/baseline_vpn_key_black_24" />
+            android:src="@drawable/baseline_vpn_key_black_48"
+            android:contentDescription="@string/key_pic_desc" />
 
         <TextView
             android:id="@+id/text_hotel_suites"
-            style="@style/HotelCard.Text.Additional"
+            style="@style/HotelCard.Text.Large"
             android:padding="8dp"
             android:text="@string/hotel_suites_placeholder" />
     </LinearLayout>
@@ -92,17 +101,20 @@
     <LinearLayout
         android:id="@+id/layout_hotel_lat"
         style="@style/TextHotelInfoBackground"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_marginStart="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@id/layout_hotel_suites">
 
         <ImageView
             style="@style/ImageHotelInfo"
-            android:contentDescription="@string/place_pic_desc"
-            android:src="@drawable/baseline_place_black_24" />
+            android:src="@drawable/baseline_place_black_48"
+            android:contentDescription="@string/place_pic_desc" />
 
         <TextView
             android:id="@+id/text_hotel_coordinates"
-            style="@style/HotelCard.Text.Additional"
+            style="@style/HotelCard.Text.Large"
             android:padding="8dp"
             android:text="@string/hotel_coordinates_placeholder" />
 
@@ -110,14 +122,16 @@
 
     <TextView
         android:id="@+id/text_hotel_name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:elevation="16dp"
+        android:layout_marginEnd="8dp"
+        android:elevation="32dp"
         android:text="@string/hotel_name_placeholder"
         android:textColor="@color/colorActionBarText"
-        android:textSize="@dimen/bigTextSize"
+        android:textSize="@dimen/bigTextSizeLarge"
         app:layout_constraintBottom_toBottomOf="@id/image_hotel"
+        app:layout_constraintEnd_toEndOf="@+id/image_hotel"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.Toolbar
@@ -134,9 +148,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:background="?android:selectableItemBackground"
-                android:contentDescription="@string/arrow_back_desc"
+                android:clickable="true"
+                android:focusable="true"
                 android:onClick="onBackBtnClick"
-                android:src="@drawable/outline_arrow_back_white_36" />
+                android:src="@drawable/outline_arrow_back_white_48"
+                android:contentDescription="@string/arrow_back_desc" />
 
         </LinearLayout>
 
@@ -157,9 +173,16 @@
         app:layout_constraintGuide_begin="42dp" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_photo_height"
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.33" />
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
